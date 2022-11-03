@@ -8,23 +8,28 @@ local rofi_command = 'env /usr/bin/rofi -dpi ' .. get_dpi() .. ' -width ' .. wit
 return {
   -- List of apps to start by default on some actions
   default = {
-    terminal = 'terminator',
+    terminal = 'tilix',
     rofi = rofi_command,
     lock = 'i3lock-fancy',
     quake = 'terminator',
     screenshot = 'flameshot screen -p ~/Pictures',
     region_screenshot = 'flameshot gui -p ~/Pictures',
     delayed_screenshot = 'flameshot screen -p ~/Pictures -d 5000',
-    browser = 'brave',
+    browser = 'google-chrome-stable',
     editor = 'gedit', -- gui text editor
     social = 'discord',
     game = rofi_command,
-    files = 'nautilus',
+    files = 'thunar',
     music = rofi_command 
   },
   -- List of apps to start once on start-up
   run_on_start_up = {
-    'picom --config ' .. filesystem.get_configuration_dir() .. '/configuration/picom.conf',
+    'xcompmgr',  
+    'feh --randomize --bg-fill ~/.wallpapers/*',
+    'tilix -e htop',
+    'tilix',
+    'x-terminal-emulator',
+    'compton --config ' .. filesystem.get_configuration_dir() .. '/configuration/compton.conf',
     'nm-applet --indicator', -- wifi
     'pnmixer', -- shows an audiocontrol applet in systray when installed.
     --'blueberry-tray', -- Bluetooth tray icon
@@ -34,8 +39,7 @@ return {
      'flameshot',
      'synology-drive -minimized',
      'steam -silent',
-    'feh --randomize --bg-fill ~/.wallpapers/*',
-    '/usr/bin/variety',
+     '/usr/bin/variety',
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script
     '~/.config/awesome/configuration/awspawn' -- Spawn "dirty" apps that can linger between sessions

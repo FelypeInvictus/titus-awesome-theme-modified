@@ -1,4 +1,16 @@
+## Material and Mouse driven theme for [AwesomeWM 4.3](https://awesomewm.org/)
+### Original design by PapyElGringo, I modified it removing sidebar and condensing the bars to a single top panel. 
 
+Note: This fork focuses on streamlining the config and adding some Quality of Life touches to the theme.
+
+An almost desktop environment made with [AwesomeWM](https://awesomewm.org/) following the [Material Design guidelines](https://material.io) with a performant opiniated mouse/keyboard workflow to increase daily productivity and comfort.
+
+[![](./theme/titus-theme/demo.png)](https://www.reddit.com/r/unixporn/comments/anp51q/awesome_material_awesome_workflow/)
+*[Click to view in high quality](https://www.reddit.com/r/unixporn/comments/anp51q/awesome_material_awesome_workflow/)*
+
+| Fullscreen   | Rofi Combo Panel | Exit screen   |
+|:-------------:|:-------------:|:-------------:|
+|![](./theme/titus-theme/fullscreen.png)|![](./theme/titus-theme/panel.png)|![](https://i.imgur.com/rcKOLYQ.png)|
 
 ## Installation
 
@@ -14,7 +26,8 @@ wget -qO- https://git.io/papirus-icon-theme-install | sh
 #### Arch-Based
 
 ```
-yay -S awesome rofi picom i3lock-fancy xclip ttf-roboto polkit-gnome materia-theme lxappearance flameshot pnmixer network-manager-applet xfce4-power-manager qt5-styleplugins papirus-icon-theme -y
+yay -S awesome rofi picom i3lock-fancy xclip ttf-roboto polkit-gnome materia-theme lxappearance flameshot pnmixer network-manager-applet xfce4-power-manager qt5-styleplugins -y
+wget -qO- https://git.io/papirus-icon-theme-install | sh
 ```
 
 #### Program list
@@ -30,7 +43,7 @@ yay -S awesome rofi picom i3lock-fancy xclip ttf-roboto polkit-gnome materia-the
 - [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) as icon theme Universal Install: wget -qO- https://git.io/papirus-icon-theme-install | sh
 - [lxappearance](https://sourceforge.net/projects/lxde/files/LXAppearance/) to set up the gtk and icon theme
 - (Laptop) [xbacklight](https://www.x.org/archive/X11R7.5/doc/man/man1/xbacklight.1.html) for adjusting brightness on laptops (disabled by default)
-- [flameshot](https://flameshot.org/) my personal screenshot utility of choice, can be replaced by whichever you want, just remember to edit the apps.lua file
+- [flameshot](https://flameshot.js.org/#/) my personal screenshot utility of choice, can be replaced by whichever you want, just remember to edit the apps.lua file
 - [pnmixer](https://github.com/nicklan/pnmixer) Audio Tray icon that is in debian repositories and is easily installed on arch through AUR.
 - [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet) nm-applet is a Network Manager Tray display from GNOME.
 - [xfce4-power-manager](https://docs.xfce.org/xfce/xfce4-power-manager/start) XFCE4's power manager is excellent and a great way of dealing with sleep, monitor timeout, and other power management features.
@@ -49,7 +62,7 @@ git clone --branch debian https://github.com/ChrisTitusTech/titus-awesome ~/.con
 
 ### 3) Set the themes
 
-Start `lxappearance` to activate the **icon** theme and **GTK** theme.
+Start `lxappearance` to active the **icon** theme and **GTK** theme
 Note: for cursor theme, edit `~/.icons/default/index.theme` and `~/.config/gtk3-0/settings.ini`, for the change to also show up in applications run as root, copy the 2 files over to their respective place in `/root`.
 
 Recommended Cursors - <https://github.com/keeferrourke/capitaine-cursors>

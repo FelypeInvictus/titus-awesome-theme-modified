@@ -283,7 +283,7 @@ local globalKeys =
     {description = 'Show weather', group = 'widgets'}
   ),--]]
   -- Brightness
-  awful.key(
+  --[[awful.key(
     {},
     'XF86MonBrightnessUp',
     function()
@@ -298,33 +298,39 @@ local globalKeys =
       awful.spawn('xbacklight -dec 10')
     end,
     {description = '-10%', group = 'hotkeys'}
-  ),
+  ),--]]
   -- ALSA volume control
+  
+  --[['XF86AudioRaiseVolume'
+  'XF86AudioLowerVolume'
+  'XF86AudioMute'
+  --]]
+  
   awful.key(
-    {},
-    'XF86AudioRaiseVolume',
+    {altkey},
+    'Up',
     function()
       awful.spawn('amixer -D pulse sset Master 5%+')
     end,
     {description = 'volume up', group = 'hotkeys'}
   ),
   awful.key(
-    {},
-    'XF86AudioLowerVolume',
+    {altkey},
+    'Down',
     function()
-      awful.spawn('amixer -D pulse sset Master 5%-')
+      awful.util.spawn_with_shell('amixer -D pulse sset Master 5%-')
     end,
     {description = 'volume down', group = 'hotkeys'}
   ),
   awful.key(
-    {},
-    'XF86AudioMute',
+    {altkey},
+    'x',
     function()
-      awful.spawn('amixer -D pulse set Master 1+ toggle')
+      awful.util.spawn_with_shell('amixer -D pulse set Master 1+ toggle')
     end,
     {description = 'toggle mute', group = 'hotkeys'}
   ),
-  awful.key(
+  --[[awful.key(
     {},
     'XF86AudioNext',
     function()
@@ -347,7 +353,7 @@ local globalKeys =
       _G.exit_screen_show()
     end,
     {description = 'toggle mute', group = 'hotkeys'}
-  ),
+  ),--]]
   -- Screen management
   awful.key(
     {modkey},
@@ -420,6 +426,22 @@ local globalKeys =
       awful.util.spawn_with_shell('ibus emoji')
     end,
     {description = 'Open the ibus emoji picker to copy an emoji to your clipboard', group = 'hotkeys'}
+  ),
+  -- Telegram
+  awful.key(
+    {altkey, 'Shift'},
+    't',
+    function()
+      awful.util.spawn('/snap/bin/telegram-desktop -r telegram-desktop')
+    end
+  ),
+  -- VS Code
+  awful.key(
+    {altkey, 'Shift'},
+    'c',
+    function()
+      awful.util.spawn('/snap/bin/code -r code')
+    end
   )
 )
 
